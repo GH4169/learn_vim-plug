@@ -89,6 +89,9 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 "  \         'syn clear verilogStatement',
 "  \       ],
 let g:rainbow_conf = {
+  \   'after': [
+  \     'syn clear verilogStatement',
+  \   ],
   \   'guifgs': ['DarkYellow', 'darkorange3', 'seagreen3', 'firebrick'],
   \   'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
   \   'guis': [''],
