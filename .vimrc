@@ -65,9 +65,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'kshenoy/vim-signature'
 call plug#end()
 
-"call pmana#begin()
+"call pmana#begin(){{{
 ""Pmana 'test/zhou', {'frozen': 1}
 "Pmana 'test/zhou'
 "" List your plugins here
@@ -77,7 +78,7 @@ call plug#end()
 ""Pmana 'test/zhou', {'frozen': 1}
 "Pman 'test/zhou'
 "" List your plugins here
-"call pman#end()
+"call pman#end()}}}
 "}}}
 
 "Plug config{{{
@@ -89,9 +90,6 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 "  \         'syn clear verilogStatement',
 "  \       ],
 let g:rainbow_conf = {
-  \   'after': [
-  \     'syn clear verilogStatement',
-  \   ],
   \   'guifgs': ['DarkYellow', 'darkorange3', 'seagreen3', 'firebrick'],
   \   'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
   \   'guis': [''],
@@ -101,6 +99,9 @@ let g:rainbow_conf = {
   \     '*': {},
   \     'verilog_systemverilog': {
   \       'parentheses': ['start=/\<begin\>/ end=/\<end\>/ fold','start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+  \       'after': [
+  \         'syn clear verilogStatement',
+  \       ],
   \     },
   \     'markdown': {
   \       'parentheses_options': 'containedin=markdownCode contained',
@@ -156,6 +157,30 @@ set bg=dark
 " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_char_list = ['¦', '┊', '┆', '|']
 
+let g:SignaturePersistMarks = 0
+let g:SignatureMap = {
+  \ 'Leader'             :  "m",
+  \ 'PlaceNextMark'      :  "m,",
+  \ 'ToggleMarkAtLine'   :  "m.",
+  \ 'PurgeMarksAtLine'   :  "m-",
+  \ 'DeleteMark'         :  "dm",
+  \ 'PurgeMarks'         :  "m<Space>",
+  \ 'PurgeMarkers'       :  "m<BS>",
+  \ 'GotoNextLineAlpha'  :  "nm",
+  \ 'GotoPrevLineAlpha'  :  "pm",
+  \ 'GotoNextSpotAlpha'  :  "`]",
+  \ 'GotoPrevSpotAlpha'  :  "`[",
+  \ 'GotoNextLineByPos'  :  "]'",
+  \ 'GotoPrevLineByPos'  :  "['",
+  \ 'GotoNextSpotByPos'  :  "]`",
+  \ 'GotoPrevSpotByPos'  :  "[`",
+  \ 'GotoNextMarker'     :  "]-",
+  \ 'GotoPrevMarker'     :  "[-",
+  \ 'GotoNextMarkerAny'  :  "]=",
+  \ 'GotoPrevMarkerAny'  :  "[=",
+  \ 'ListBufferMarks'    :  "m/",
+  \ 'ListBufferMarkers'  :  "m?"
+  \ }
 "}}}
 
 " map{{{
