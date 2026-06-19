@@ -3,10 +3,15 @@
 
 let mapleader=" "
 
+set encoding=utf-8
+set fileencodings=utf-8,gbk,gb2312,gb18030,cp936
+" set guifontwide=WenQuanYi\ Zen\ Hei\ 12
+"
 if has('gui_running')
   " colorscheme desert
-  set guifont=courier\ 10\ pitch\ 18
-  set lines=80 columns=160
+  " set guifont=courier\ 10\ pitch\ 18
+  set guifont=Courier\ New\ 16
+  set lines=100 columns=300
 endif
 
 
@@ -45,6 +50,7 @@ let &t_SI = "\e[6 q"
 " 普通模式方块光标
 let &t_EI = "\e[2 q"
 "set spell
+set mouse=a
 
 "}}}
 
@@ -254,6 +260,8 @@ nnoremap cm <Plug>CommentaryLine
 nnoremap cu <Plug>CommentaryLine
 vnoremap cm <Plug>Commentary
 vnoremap cu <Plug>Commentary
+
+nnoremap * *N
 
 
 inoremap <expr> <Tab> match(strpart(getline('.'), 0, col('.') - 1), '^\s*$') == 0 ? "\<Tab>" : "\<C-n>"
